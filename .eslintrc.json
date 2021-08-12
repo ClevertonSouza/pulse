@@ -1,11 +1,13 @@
 {
     "env": {
+        "browser": true,
         "es2021": true
     },
     "extends": [
-        "prettier",
+        "eslint:recommended",
         "plugin:react/recommended",
-        "airbnb"
+        "plugin:@typescript-eslint/recommended",
+        "prettier"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -17,15 +19,26 @@
     },
     "plugins": [
         "react",
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "prettier"
     ],
     "rules": {
         "prettier/prettier": "error",
-        "react/jsx-filename-extension": [
-            "warn",
-            {"extensions": [".ts", ".tsx"]}
-          ],
-          "import/prefer-default-export": "off",
-          "jsx-quotes": ["error", "prefer-single"]
+        "indent": [
+            "error",
+            4
+        ],
+        "linebreak-style": [
+            "error",
+            "windows"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ]
     }
 }
