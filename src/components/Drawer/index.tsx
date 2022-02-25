@@ -5,8 +5,9 @@ import {
     DrawerItemList,
 } from '@react-navigation/drawer';
 import React from 'react';
+import Text from '../shared/Text';
 
-import { Header, WelcomeText, DrawerListContainer } from './styles';
+import { Header, DrawerListContainer } from './styles';
 
 const DrawerCustom: React.FC<
     DrawerContentComponentProps<DrawerContentOptions>
@@ -14,10 +15,15 @@ const DrawerCustom: React.FC<
     return (
         <DrawerContentScrollView {...props}>
             <Header>
-                <WelcomeText>Seja bem vindo!</WelcomeText>
+                <Text>Seja bem vindo!</Text>
             </Header>
             <DrawerListContainer>
-                <DrawerItemList {...props} />
+                <DrawerItemList
+                    {...props}
+                    activeBackgroundColor="#8e24aa"
+                    activeTintColor="#fff"
+                    inactiveTintColor="#000"
+                />
             </DrawerListContainer>
         </DrawerContentScrollView>
     );
